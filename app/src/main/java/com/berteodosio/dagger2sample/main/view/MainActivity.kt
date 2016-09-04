@@ -15,8 +15,6 @@ class MainActivity : BaseActivity<MainContract.Presenter, MainComponent>(), Main
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        component.inject(this)
     }
 
     override fun displayHelloMessage() {
