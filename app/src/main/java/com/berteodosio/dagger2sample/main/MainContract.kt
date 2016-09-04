@@ -4,6 +4,10 @@ interface MainContract {
 
     interface View {
 
+        fun displayHelloMessage()
+
+        fun displayGeneralMessage(message: String)
+
     }
 
     interface Presenter {

@@ -1,5 +1,6 @@
-package com.berteodosio.dagger2sample.main
+package com.berteodosio.dagger2sample.main.di
 
+import com.berteodosio.dagger2sample.main.presenter.MainPresenter
 import com.berteodosio.dagger2sample.main.view.MainActivity
 import dagger.Component
 
@@ -7,5 +8,7 @@ import dagger.Component
 interface MainComponent {
 
     fun inject(mainActivity: MainActivity)
+
+    fun inject(mainPresenter: MainPresenter)
 
 }
