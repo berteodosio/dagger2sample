@@ -1,7 +1,6 @@
 package com.berteodosio.dagger2sample.main.view
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import com.berteodosio.dagger2sample.R
 import com.berteodosio.dagger2sample.base.BaseActivity
@@ -10,20 +9,14 @@ import com.berteodosio.dagger2sample.main.di.DaggerMainComponent
 import com.berteodosio.dagger2sample.main.di.MainComponent
 import com.berteodosio.dagger2sample.main.di.MainModule
 import com.berteodosio.dagger2sample.main.presenter.MainPresenter
-import javax.inject.Inject
 
-class MainActivity : BaseActivity<MainContract.Presenter>(), MainContract.View {
-
-    val mainComponent: MainComponent = DaggerMainComponent
-            .builder()
-            .mainModule(MainModule(this))
-            .build()
+class MainActivity : BaseActivity<MainContract.Presenter, MainComponent>(), MainContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mainComponent.inject(this)
+        component.inject(this)
     }
 
     override fun displayHelloMessage() {
@@ -36,8 +29,15 @@ class MainActivity : BaseActivity<MainContract.Presenter>(), MainContract.View {
 
     override fun createPresenter(): MainContract.Presenter {
         val presenter = MainPresenter()
-        mainComponent.inject(presenter)
+        component.inject(presenter)
 
         return presenter
+    }
+
+    override fun createComponent(): MainComponent {
+        return DaggerMainComponent
+            .builder()
+            .mainModule(MainModule(this))
+            .build()
     }
 }
