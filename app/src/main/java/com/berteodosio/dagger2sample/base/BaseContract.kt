@@ -4,8 +4,6 @@ interface BaseContract {
 
     interface View<out Presenter : BaseContract.Presenter> {
 
-        fun createPresenter() : Presenter
-
     }
 
     interface Presenter {
