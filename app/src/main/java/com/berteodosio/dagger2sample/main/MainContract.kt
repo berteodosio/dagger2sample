@@ -1,5 +1,7 @@
 package com.berteodosio.dagger2sample.main
 
+import com.berteodosio.dagger2sample.base.BaseContract
+
 interface MainContract {
 
     interface View {
@@ -10,7 +12,7 @@ interface MainContract {
 
     }
 
-    interface Presenter {
+    interface Presenter : BaseContract.Presenter {
 
     }
 

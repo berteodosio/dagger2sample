@@ -11,7 +11,7 @@ import dagger.Provides
 class MainModule(val mainView: MainContract.View) {
 
     @Provides
-    fun provideMainPresenter(): MainPresenter {
+    fun provideMainPresenter(): MainContract.Presenter {
         return MainPresenter()
     }
 

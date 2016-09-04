@@ -4,30 +4,26 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import com.berteodosio.dagger2sample.R
+import com.berteodosio.dagger2sample.base.BaseActivity
 import com.berteodosio.dagger2sample.main.MainContract
 import com.berteodosio.dagger2sample.main.di.DaggerMainComponent
+import com.berteodosio.dagger2sample.main.di.MainComponent
 import com.berteodosio.dagger2sample.main.di.MainModule
 import com.berteodosio.dagger2sample.main.presenter.MainPresenter
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(), MainContract.View {
+class MainActivity : BaseActivity<MainContract.Presenter>(), MainContract.View {
 
-    @Inject
-    lateinit var presenter: MainPresenter   // for some unknown reason, lateinit must exists
+    val mainComponent: MainComponent = DaggerMainComponent
+            .builder()
+            .mainModule(MainModule(this))
+            .build()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val component = DaggerMainComponent
-                .builder()
-                .mainModule(MainModule(this))
-                .build()
-
-        component.inject(this)
-        component.inject(presenter)
-
-        presenter.onCreate()
+        mainComponent.inject(this)
     }
 
     override fun displayHelloMessage() {
@@ -36,5 +32,12 @@ class MainActivity : AppCompatActivity(), MainContract.View {
 
     override fun displayGeneralMessage(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun createPresenter(): MainContract.Presenter {
+        val presenter = MainPresenter()
+        mainComponent.inject(presenter)
+
+        return presenter
     }
 }

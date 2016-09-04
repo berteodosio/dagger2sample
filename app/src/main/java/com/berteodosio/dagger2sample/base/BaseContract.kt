@@ -1,8 +1,5 @@
 package com.berteodosio.dagger2sample.base
 
-import android.content.Intent
-import android.os.Bundle
-
 interface BaseContract {
 
     interface View<out Presenter : BaseContract.Presenter> {
@@ -13,7 +10,7 @@ interface BaseContract {
 
     interface Presenter {
 
-        fun onCreate(savedInstanceState: Bundle?)
+        fun onCreate()
 
         fun onStart()
 
@@ -23,11 +20,9 @@ interface BaseContract {
 
         fun onStop()
 
-        fun onSaveInstanceState(outState: Bundle?)
+        fun onSaveInstanceState()
 
         fun onDestroy()
-
-        fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)
 
     }
 }
