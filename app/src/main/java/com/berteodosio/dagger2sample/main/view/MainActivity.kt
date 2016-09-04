@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity(), MainContract.View {
                 .mainModule(MainModule(this))
                 .build()
 
-
         component.inject(this)
         component.inject(presenter)
 

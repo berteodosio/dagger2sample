@@ -12,12 +12,17 @@ class MainModule(val mainView: MainContract.View) {
 
     @Provides
     fun provideMainPresenter(): MainPresenter {
-        return MainPresenter(mainView)
+        return MainPresenter()
     }
 
     @Provides
     fun provideMainUseCases(): MainUseCases {
         return MainUseCasesImpl()
+    }
+
+    @Provides
+    fun provideMainView(): MainContract.View {
+        return mainView
     }
 
 }
