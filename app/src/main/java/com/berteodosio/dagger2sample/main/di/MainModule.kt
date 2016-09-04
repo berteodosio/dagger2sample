@@ -2,7 +2,6 @@ package com.berteodosio.dagger2sample.main.di
 
 import com.berteodosio.dagger2sample.main.MainContract
 import com.berteodosio.dagger2sample.main.business.MainUseCases
-import com.berteodosio.dagger2sample.main.business.MainUseCasesImpl
 import com.berteodosio.dagger2sample.main.presenter.MainPresenter
 import dagger.Module
 import dagger.Provides
@@ -16,8 +15,8 @@ class MainModule(val mainView: MainContract.View) {
     }
 
     @Provides
-    fun provideMainUseCases(): MainUseCases {
-        return MainUseCasesImpl()
+    fun provideMainUseCases(): MainContract.UseCases {
+        return MainUseCases()
     }
 
     @Provides

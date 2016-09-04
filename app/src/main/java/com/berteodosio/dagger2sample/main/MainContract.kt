@@ -16,4 +16,10 @@ interface MainContract {
 
     }
 
+    interface UseCases {
+
+        fun getServerAddress(): String
+
+    }
+
 }

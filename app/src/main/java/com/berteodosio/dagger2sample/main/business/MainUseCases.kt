@@ -1,7 +1,9 @@
 package com.berteodosio.dagger2sample.main.business
 
-interface MainUseCases {
+import com.berteodosio.dagger2sample.main.MainContract
 
-    fun getServerAddress(): String
+class MainUseCases : MainContract.UseCases {
+
+    override fun getServerAddress() = "https://google.com"
 
 }

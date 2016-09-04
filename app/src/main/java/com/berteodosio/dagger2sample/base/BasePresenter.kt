@@ -22,10 +22,6 @@ open class BasePresenter : BaseContract.Presenter {
 
     }
 
-    override fun onSaveInstanceState() {
-
-    }
-
     override fun onDestroy() {
 
     }

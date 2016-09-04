@@ -20,8 +20,6 @@ interface BaseContract {
 
         fun onStop()
 
-        fun onSaveInstanceState()
-
         fun onDestroy()
 
     }
