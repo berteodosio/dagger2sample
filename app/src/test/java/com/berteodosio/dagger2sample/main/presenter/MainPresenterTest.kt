@@ -1,4 +1,4 @@
-package com.berteodosio.dagger2sample
+package com.berteodosio.dagger2sample.main.presenter
 
 import com.berteodosio.dagger2sample.main.MainContract
 import com.berteodosio.dagger2sample.main.di.DaggerMainComponent
@@ -16,7 +16,7 @@ class MainPresenterTest {
     val presenter = component.getMainPresenter()
 
     @Test
-    fun onCreate_test() {
+    fun onCreate() {
         presenter.onCreate()
 
         verify(mockView, times(1)).displayHelloMessage()
