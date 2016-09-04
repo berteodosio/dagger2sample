@@ -16,4 +16,8 @@ interface MainComponent : BaseContract.Component {
 
     fun inject(mainActivity: MainActivity)
 
+    fun getMainPresenter(): MainContract.Presenter
+
+    fun getMainUseCases(): MainContract.UseCases
+
 }
