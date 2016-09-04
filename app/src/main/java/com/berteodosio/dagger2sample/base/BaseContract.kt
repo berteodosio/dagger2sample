@@ -10,17 +10,19 @@ interface BaseContract {
 
     interface Presenter {
 
-        fun onCreate()
+        fun onCreate() = Unit
 
-        fun onStart()
+        fun onStart() = Unit
 
-        fun onResume()
+        fun onResume() = Unit
 
-        fun onPause()
+        fun onPause() = Unit
 
-        fun onStop()
+        fun onStop() = Unit
 
-        fun onDestroy()
+        fun onDestroy() = Unit
 
     }
+
+    interface Component
 }

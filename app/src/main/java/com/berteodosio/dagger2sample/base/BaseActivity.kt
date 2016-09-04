@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.support.annotation.CallSuper
 import android.support.v7.app.AppCompatActivity
 
-abstract class BaseActivity<PRESENTER : BaseContract.Presenter, COMPONENT: BaseComponent> : AppCompatActivity(), BaseContract.View<PRESENTER> {
+abstract class BaseActivity<PRESENTER : BaseContract.Presenter, COMPONENT: BaseContract.Component> : AppCompatActivity(), BaseContract.View<PRESENTER> {
 
     lateinit var component: COMPONENT
     lateinit var presenter: PRESENTER

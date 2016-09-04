@@ -1,3 +1,0 @@
-package com.berteodosio.dagger2sample.base
-
-interface BaseComponent
