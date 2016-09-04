@@ -13,6 +13,8 @@ import com.berteodosio.dagger2sample.main.presenter.MainPresenter
 class MainActivity : BaseActivity<MainContract.Presenter, MainComponent>(), MainContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        component.inject(this)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
