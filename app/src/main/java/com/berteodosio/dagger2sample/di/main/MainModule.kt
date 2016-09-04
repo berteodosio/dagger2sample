@@ -1,8 +1,8 @@
-package com.berteodosio.dagger2sample.main.di
+package com.berteodosio.dagger2sample.di.main
 
-import com.berteodosio.dagger2sample.main.MainContract
-import com.berteodosio.dagger2sample.main.business.MainUseCases
-import com.berteodosio.dagger2sample.main.presenter.MainPresenter
+import com.berteodosio.dagger2sample.domain.main.MainContract
+import com.berteodosio.dagger2sample.domain.main.MainUseCases
+import com.berteodosio.dagger2sample.presentation.main.presenter.MainPresenter
 import dagger.Module
 import dagger.Provides
 

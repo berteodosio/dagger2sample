@@ -1,9 +1,9 @@
-package com.berteodosio.dagger2sample.base.view
+package com.berteodosio.dagger2sample.presentation.base.view
 
 import android.os.Bundle
 import android.support.annotation.CallSuper
 import android.support.v7.app.AppCompatActivity
-import com.berteodosio.dagger2sample.base.BaseContract
+import com.berteodosio.dagger2sample.domain.base.BaseContract
 import javax.inject.Inject
 
 abstract class BaseActivity<PRESENTER : BaseContract.Presenter, COMPONENT: BaseContract.Component> : AppCompatActivity(), BaseContract.View<PRESENTER> {

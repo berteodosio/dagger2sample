@@ -1,10 +1,10 @@
-package com.berteodosio.dagger2sample.main.di
+package com.berteodosio.dagger2sample.di.main
 
-import com.berteodosio.dagger2sample.base.view.BaseActivity
-import com.berteodosio.dagger2sample.base.BaseContract
-import com.berteodosio.dagger2sample.main.MainContract
-import com.berteodosio.dagger2sample.main.presenter.MainPresenter
-import com.berteodosio.dagger2sample.main.view.MainActivity
+import com.berteodosio.dagger2sample.presentation.base.view.BaseActivity
+import com.berteodosio.dagger2sample.domain.base.BaseContract
+import com.berteodosio.dagger2sample.domain.main.MainContract
+import com.berteodosio.dagger2sample.presentation.main.presenter.MainPresenter
+import com.berteodosio.dagger2sample.presentation.main.view.MainActivity
 import dagger.Component
 
 @Component(modules = arrayOf(MainModule::class))

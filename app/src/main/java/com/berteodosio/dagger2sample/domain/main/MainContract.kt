@@ -1,6 +1,6 @@
-package com.berteodosio.dagger2sample.main
+package com.berteodosio.dagger2sample.domain.main
 
-import com.berteodosio.dagger2sample.base.BaseContract
+import com.berteodosio.dagger2sample.domain.base.BaseContract
 
 interface MainContract {
 

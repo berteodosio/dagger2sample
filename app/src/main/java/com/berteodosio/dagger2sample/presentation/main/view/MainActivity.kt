@@ -1,13 +1,13 @@
-package com.berteodosio.dagger2sample.main.view
+package com.berteodosio.dagger2sample.presentation.main.view
 
 import android.os.Bundle
 import android.widget.Toast
 import com.berteodosio.dagger2sample.R
-import com.berteodosio.dagger2sample.base.view.BaseActivity
-import com.berteodosio.dagger2sample.main.MainContract
-import com.berteodosio.dagger2sample.main.di.DaggerMainComponent
-import com.berteodosio.dagger2sample.main.di.MainComponent
-import com.berteodosio.dagger2sample.main.di.MainModule
+import com.berteodosio.dagger2sample.di.main.DaggerMainComponent
+import com.berteodosio.dagger2sample.di.main.MainComponent
+import com.berteodosio.dagger2sample.di.main.MainModule
+import com.berteodosio.dagger2sample.domain.main.MainContract
+import com.berteodosio.dagger2sample.presentation.base.view.BaseActivity
 
 class MainActivity : BaseActivity<MainContract.Presenter, MainComponent>(), MainContract.View {
 

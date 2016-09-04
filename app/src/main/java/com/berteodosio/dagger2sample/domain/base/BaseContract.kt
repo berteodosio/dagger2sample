@@ -1,4 +1,4 @@
-package com.berteodosio.dagger2sample.base
+package com.berteodosio.dagger2sample.domain.base
 
 interface BaseContract {
 
