@@ -28,10 +28,10 @@ class MainActivity : BaseActivity<MainContract.Presenter, MainComponent>(), Main
     }
 
     override fun createPresenter(): MainContract.Presenter {
-        val presenter = MainPresenter()
-        component.inject(presenter)
+//        val presenter = MainPresenter()
+//        component.inject(presenter)
 
-        return presenter
+        return null!!
     }
 
     override fun createComponent(): MainComponent {

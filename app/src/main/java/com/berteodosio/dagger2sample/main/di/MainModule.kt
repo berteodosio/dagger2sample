@@ -9,14 +9,11 @@ import dagger.Provides
 @Module
 class MainModule(val mainView: MainContract.View) {
 
-    val component: MainComponent = DaggerMainComponent.builder().mainModule(this).build()
+//    val component: MainComponent = DaggerMainComponent.builder().mainModule(this).build()
 
     @Provides
-    fun provideMainPresenter(): MainContract.Presenter {
-        val presenter = MainPresenter()
-        component.inject(presenter)
-
-        return presenter
+    fun provideMainPresenter(mainView: MainContract.View, mainUseCases: MainContract.UseCases): MainContract.Presenter {
+        return MainPresenter(mainView, mainUseCases)
     }
 
     @Provides
