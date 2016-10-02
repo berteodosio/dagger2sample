@@ -10,14 +10,10 @@ import dagger.Provides
 open class MainModule(val mainView: MainContract.View) {
 
     @Provides
-    fun provideMainPresenter(mainView: MainContract.View, mainUseCases: MainContract.UseCases): MainContract.Presenter {
-        return MainPresenter(mainView, mainUseCases)
-    }
+    fun provideMainPresenter(mainPresenter: MainPresenter): MainContract.Presenter = mainPresenter
 
     @Provides
-    open fun provideMainUseCases(): MainContract.UseCases {
-        return MainUseCases()
-    }
+    open fun provideMainUseCases(mainUseCases: MainUseCases): MainContract.UseCases = mainUseCases
 
     @Provides
     fun provideMainView(): MainContract.View {

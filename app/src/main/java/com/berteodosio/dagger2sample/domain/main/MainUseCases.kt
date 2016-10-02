@@ -1,8 +1,8 @@
 package com.berteodosio.dagger2sample.domain.main
 
-import com.berteodosio.dagger2sample.domain.main.MainContract
+import javax.inject.Inject
 
-class MainUseCases : MainContract.UseCases {
+class MainUseCases @Inject constructor() : MainContract.UseCases {
 
     override fun getServerAddress() = "https://google.com"
 
