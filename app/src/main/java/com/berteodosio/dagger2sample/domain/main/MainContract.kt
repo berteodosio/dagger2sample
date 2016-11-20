@@ -1,6 +1,8 @@
 package com.berteodosio.dagger2sample.domain.main
 
 import com.berteodosio.dagger2sample.domain.base.BaseContract
+import rx.Subscriber
+import rx.Subscription
 
 interface MainContract {
 
@@ -10,6 +12,12 @@ interface MainContract {
 
         fun displayGeneralMessage(message: String)
 
+        fun hideLoading()
+
+        fun displayGeneralError()
+
+        fun showLoading()
+
     }
 
     interface Presenter : BaseContract.Presenter {
@@ -18,7 +26,7 @@ interface MainContract {
 
     interface UseCases {
 
-        fun getServerAddress(): String
+        fun fetchServerAddress(subscriber: Subscriber<String>): Subscription
 
     }
 

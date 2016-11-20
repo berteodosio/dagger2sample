@@ -14,6 +14,7 @@ class MainActivity : BaseActivity<MainContract.Presenter, MainComponent>(), Main
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        presenter.onCreate()
     }
 
     override fun displayHelloMessage() {
@@ -30,8 +31,20 @@ class MainActivity : BaseActivity<MainContract.Presenter, MainComponent>(), Main
                 .mainModule(MainModule(this))
                 .build()
     }
-
+    
     override fun injectDependencies(component: MainComponent) {
         component.inject(this)
+    }
+
+    override fun hideLoading() {
+        Toast.makeText(this, "hideLoading()", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun displayGeneralError() {
+        Toast.makeText(this, "displayGeneralError()", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun showLoading() {
+        Toast.makeText(this, "showLoading()", Toast.LENGTH_SHORT).show()
     }
 }

@@ -14,9 +14,7 @@ abstract class BaseActivity<PRESENTER : BaseContract.Presenter, COMPONENT: BaseC
     @CallSuper
     override fun onCreate(savedInstanceState: Bundle?) {
         injectDependencies(createComponent())
-
         super.onCreate(savedInstanceState)
-        presenter.onCreate()
     }
 
     abstract fun createComponent(): COMPONENT
